@@ -1,0 +1,38 @@
+# Public Key and Certificate License Agreement
+
+## 1. Definitions
+
+- **"Licensed Files"**: This refers to the openPGP and S/MIME public key files, signatures, and certificates covered by this license.
+- **"Repository Owner"**: The individual or organization holding the copyright to the Licensed Files. In this reposotory will be Eason Lu (@aelnosu).
+- **"User"**: Any individual or organization accessing, using, or distributing the Licensed Files.
+- **"Rely"**: To use, trust, or depend on the authenticity or validity of the Licensed Files for any purpose, including but not limited to verifying signatures, encrypting communications, or establishing identity.
+- **"The Jurisdiction In Which the Repository Owner Resides"**: Palo Alto, California, USA
+
+
+## 2. Copyright Notice
+
+All copyright in the Licensed Files is reserved by the Repository Owner. No ownership rights are transferred by this license.
+
+## 3. Certification Requirement
+
+Users may not rely on the Licensed Files unless they have used their own PGP key to certify the public key. This certification must be sent back to the Repository Owner via **ENCRYPTED** email at aelnosu@gmail.com
+
+## 4. Notification Requirement
+
+When using the PGP key associated with the Licensed Files in any context, Users must explicitly and with all reasonable effort inform the recipient that they are using the key provided by the Repository Owner.
+
+## 5. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## 6. Termination
+
+This license is effective until terminated. Your rights under this license will terminate automatically without notice from the Repository Owner if you fail to comply with any term(s) of this license. Upon termination, you must cease all use of the Licensed Files and destroy all copies, full or partial, of the Licensed Files.
+
+## 7. Governing Law
+
+This license shall be governed by and construed in accordance with the laws of the jurisdiction in which the Repository Owner resides, excluding its conflict of law principles.
+
+---
+
+By using the Licensed Files, you acknowledge that you have read this license agreement, understand it, and agree to be bound by its terms and conditions.
