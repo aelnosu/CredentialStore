@@ -38,6 +38,8 @@ By using the files in this repository, you agree to the terms and conditions out
 ### Repository Structure
 
 There are 8 important files in this repository:
+
+```plaintext
 .
 ├── Certification.txt (The main PGP key certification file)
 ├── Certification.txt.asc (The main PGP key certification file signature, signed by the PGP key)
@@ -47,6 +49,7 @@ There are 8 important files in this repository:
 ├── Eason Lu_(Main)_0xA9C46116_public.asc (The main PGP key)
 ├── Key_1_0x35E98024_public.asc (The first key)
 └── Key_2_0x9AF5FF79_public.asc (The second key)
+```
 
 
 ### Verification of Main PGP Key
