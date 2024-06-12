@@ -2,9 +2,9 @@ name: GPG Valifation
 
 on:
   push:
-    branches: [ "*" ]
+    branches: ["*"]
   pull_request:
-    branches: [ "*" ]
+    branches: ["*"]
   workflow_dispatch:
 
 jobs:
@@ -12,8 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Create a PGP key
+      - name: Create a test key
+        run: |
+          gpg --batch --passphrase '' --quick-generate test
+      - name: Import PGP keys and Testing
         run: |
           chmod +x init.sh
           ./init.sh
+          gpg --list-key
           gpg --verify .github/workflows/test.txt.sig

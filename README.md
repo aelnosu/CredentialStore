@@ -2,11 +2,12 @@
 
 ## [How to Use the Repository](#how-to-use-the-repository-1)
 
-## Quick Inport And Trust Keys
+## Quick Import And Trust Keys
 
-If you don't want to read anyof these just do the follwoing
+If you don't want to read any of these just do the following:
 
 ```bash
+git clone https://github.com/aelnosu/CredentialStore.git
 cd CredentialStore
 chmod +x init.sh
 ./init.sh
@@ -80,19 +81,19 @@ To import a public key and mark them as fully trusted into your keyring, use the
 gpg --import "Eason_Lu_(Main)_0xA9C46116_public.asc"
 gpg --import "Key_1_0x35E98024_public.asc"
 gpg --import "Key_2_0x9AF5FF79_public.asc"
-echo "660279E4B9E374894D7F51C31A41C324A9C46116:5:" | gpg --import-ownertrust
+(echo 5; echo y; echo save) | gpg --command-fd 0 --no-tty --no-greeting -q --edit-key "660279E4B9E374894D7F51C31A41C324A9C46116" trust
 ```
 
 or
 
 ```bash
 gpg --keyserver keys.openpgp.org --recv-keys 1A41C324A9C46116 A5ED17B135E98024 7974BCA19AF5FF79
-echo "660279E4B9E374894D7F51C31A41C324A9C46116:5:" | gpg --import-ownertrust
+(echo 5; echo y; echo save) | gpg --command-fd 0 --no-tty --no-greeting -q --edit-key "660279E4B9E374894D7F51C31A41C324A9C46116" trust
 ```
 
 ### Building a Web of Trust
 
-If you want to help me build a Web of Trust, please certify the main PGP key and send the certification back to me by using encrypted email to aelnosu@gmail.com. The certification process is crucial for establishing trust and authenticity in the PGP Web of Trust.
+If you want to help me build a Web of Trust, please certify the main PGP key and send the certification back to me by using an encrypted email to aelnosu@gmail.com. The certification process is crucial for establishing trust and authenticity in the PGP Web of Trust.
 
 Certify the main PGP key by running the following command:
 
@@ -102,8 +103,8 @@ gpg --sign-key 660279E4B9E374894D7F51C31A41C324A9C46116
 
 Then follow the instructions to complete the certification process. Please mark the key as trust fully as that allow you to verify the other keys in the repository.
 
-After you are done, export the certification and send it back to me by using encrypted email to aelnosu@gmail.com.
-This procress can be easily done by using thunderbird, or by using the following command:
+After you are done, export the certification and send it back to me by using an encrypted email to aelnosu@gmail.com.
+This process can be easily done by using Thunderbird, or by using the following command:
 
 ```bash
 gpg --armor --export 660279E4B9E374894D7F51C31A41C324A9C46116 > Signed_Main.asc
@@ -117,8 +118,8 @@ Thank you.
 ### Verification of Other Keys
 
 After you have marked the Main key to trust fully, the other keys will be also marked as valid.
-If other key are not marked as fully trusted, you can trust them by running the following command:
+If other keys are not marked as fully trusted, you can trust them by running the following command:
 
 ```bash
-echo "660279E4B9E374894D7F51C31A41C324A9C46116:5:" | gpg --import-ownertrust
+(echo 5; echo y; echo save) | gpg --command-fd 0 --no-tty --no-greeting -q --edit-key "660279E4B9E374894D7F51C31A41C324A9C46116" trust
 ```
