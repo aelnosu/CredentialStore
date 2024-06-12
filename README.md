@@ -6,6 +6,9 @@
 
 Welcome to the Public Key and Certificate Repository. This repository contains openPGP and S/MIME public key files, signatures, and certificates managed and maintained by the Repository Owner. These files serve multiple crucial functions, including the verification of identities, encryption of communications, and the establishment of a PGP Web of Trust (WOT).
 
+The trust chain of the repository is as follows:
+![Trust Chain](Key_Topology.svg)
+
 ## Repository Functions
 
 ### 1. Identity Verification
