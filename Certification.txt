@@ -1,0 +1,8 @@
+I certify that:
+1. I own the key public and private with the file name: Eason Lu (Main)_0xA9C46116_public.asc
+2. The key's fingerprint is: 660279E4B9E374894D7F51C31A41C324A9C46116
+3. The key's ID is: 1A41C324A9C46116
+4. I have access to the private key and password.
+
+This message is signed with the key.
+The file with the PGP signature is further signed by an S/MIME certificate with the same email associated with the PGP key.
