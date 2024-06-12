@@ -2,6 +2,16 @@
 
 ## [How to Use the Repository](#how-to-use-the-repository-1)
 
+## Quick Inport And Trust Keys
+
+If you don't want to read anyof these just do the follwoing
+
+```bash
+cd CredentialStore
+chmod +x init.sh
+./init.sh
+```
+
 ## Overview
 
 Welcome to the Public Key and Certificate Repository. This repository contains openPGP and S/MIME public key files, signatures, and certificates managed and maintained by the Repository Owner. These files serve multiple crucial functions, including the verification of identities, encryption of communications, and the establishment of a PGP Web of Trust (WOT).
@@ -46,13 +56,12 @@ There are 8 important files in this repository:
 ├── Certification.txt.asc.p7s (The main PGP key certification file signature's signature, signed by the S/MIME key)
 ├── Certification.txt.asc.pkcs7 (The .p7s file converted to PKCS#7 format)
 ├── Certification.txt.asc.pkcs7.cert (The S/MIME key certificate)
-├── Eason Lu_(Main)_0xA9C46116_public.asc (The main PGP key)
+├── Eason_Lu_(Main)_0xA9C46116_public.asc (The main PGP key)
 ├── Key_1_0x35E98024_public.asc (The first key)
 └── Key_2_0x9AF5FF79_public.asc (The second key)
 ```
 
-
-### Verification of Main PGP Key
+### Verification and trust of Main PGP Key
 
 To verify the validity of the main PGP key, the file name is: `Eason Lu (Main)_0xA9C46116_public.asc`
 Run the following command in your terminal:
@@ -63,24 +72,29 @@ openssl smime -verify -binary -inform PEM -in Certification.txt.asc.pkcs7 -conte
 
 If the output is `Verification successful`, the main PGP key is valid and can be used to verify other keys in the repository.
 
-### Importing Public Keys
+### Importing Public Keys and Marking Trust
 
-To import a public key into your keyring, use the following command:
+To import a public key and mark them as fully trusted into your keyring, use the following command:
 
 ```bash
-chmod +x import.sh
-./import.sh
+gpg --import "Eason_Lu_(Main)_0xA9C46116_public.asc"
+gpg --import "Key_1_0x35E98024_public.asc"
+gpg --import "Key_2_0x9AF5FF79_public.asc"
+echo "660279E4B9E374894D7F51C31A41C324A9C46116:5:" | gpg --import-ownertrust
 ```
-or 
+
+or
 
 ```bash
 gpg --keyserver keys.openpgp.org --recv-keys 1A41C324A9C46116 A5ED17B135E98024 7974BCA19AF5FF79
+echo "660279E4B9E374894D7F51C31A41C324A9C46116:5:" | gpg --import-ownertrust
 ```
 
 ### Building a Web of Trust
+
 If you want to help me build a Web of Trust, please certify the main PGP key and send the certification back to me by using encrypted email to aelnosu@gmail.com. The certification process is crucial for establishing trust and authenticity in the PGP Web of Trust.
 
- Certify the main PGP key by running the following command:
+Certify the main PGP key by running the following command:
 
 ```bash
 gpg --sign-key 660279E4B9E374894D7F51C31A41C324A9C46116
@@ -101,4 +115,10 @@ Then attach the `Signed_Main.asc.pgp` file to an email and send it to aelnosu@gm
 Thank you.
 
 ### Verification of Other Keys
+
 After you have marked the Main key to trust fully, the other keys will be also marked as valid.
+If other key are not marked as fully trusted, you can trust them by running the following command:
+
+```bash
+echo "660279E4B9E374894D7F51C31A41C324A9C46116:5:" | gpg --import-ownertrust
+```
